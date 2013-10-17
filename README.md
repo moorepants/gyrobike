@@ -9,6 +9,10 @@ Autolev generated C code for simulation purposes. `src/matlab` contains the
 Autolev generated Matlab code for simulation purposes and some hand crafted
 functions for simulation of the non-linear and linear system.
 
+The original model written in Python is available here:
+
+https://github.com/moorepants/dissertation/tree/master/src/extensions/gyro
+
 License
 =======
 

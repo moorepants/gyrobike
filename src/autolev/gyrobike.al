@@ -1,5 +1,5 @@
 %---------------------------------------------------------------------%
-% File: GyroBike.al
+% File: gyrobike.al
 % Creation Date: November 23, 2011
 % Author: Jason K. Moore
 % Description: Generates the nonlinear and linear equations of motion
@@ -901,12 +901,13 @@ input u4=0.0 rad/s, u6=0.0 rad/s, u7=0.0 rad/s, u9=0.0 rad/s
 output q1 m, q2 m, q3 rad, q4 rad, q5 rad, q6 rad, q7 rad, q8 rad, q9 rad
 output u1 m/s, u2 m/s, u3 rad/s, u4 rad/s, u5 rad/s, u6 rad/s, u7 rad/s, u8 rad/s, u9 rad/s
 
-code dynamics() GyroBikeDynamics.c
+code dynamics() ../c/gyrobike.c
+code dynamics() ../matlab/gyrobike.m
 
 %---------------------------------------------------------------------%
 %         save output
 %---------------------------------------------------------------------%
 
-save GyroBike.all
+save gyrobike.all
 
 %---------------------------------------------------------------------%

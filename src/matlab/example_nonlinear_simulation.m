@@ -6,6 +6,10 @@
 % Load in the constants.
 constants = par_text_to_struct('gyrobike_constants_without_rider.txt');
 
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Open loop simulation. %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Define all of the initial conditions.
 initial_pitch_angle = steer_axis_tilt(constants.rf, constants.rr, ...
                                       constants.d1, constants.d3, ...
@@ -58,9 +62,11 @@ plot(time, rad2deg(states(:, [10, 12])))
 ylabel('Angular Rate [deg/s]')
 legend('Roll Rate', 'Steer Rate')
 
-% Now simulate with an applied steering torque.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now simulate with an applied steering torque. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Specify a torque function.
+% Specify a steering torque function.
 input_frequency = 1.0 * 2.0 * pi; % rad/s
 torques.T4 = @(time, states, constants) 5.0 * sin(input_frequency * time); % Nm
 

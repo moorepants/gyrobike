@@ -36,7 +36,7 @@ time = start_time:time_step:final_time;
 % Define the right hand side to the ODEs as an anonymous function.
 right_hand_side = @(time, states) gyrobike_rhs(time, states, constants);
 
-% Intergrate the equations of motion.
+% Integrate the equations of motion.
 [time, states] = ode45(right_hand_side, time, initial_conditions);
 
 % Plot the results.
@@ -74,7 +74,7 @@ torques.T4 = @(time, states, constants) 5.0 * sin(input_frequency * time); % Nm
 right_hand_side = @(time, states) gyrobike_rhs(time, states, constants, ...
                                                torques);
 
-% Intergrate the equations of motion.
+% Integrate the equations of motion.
 [time, states] = ode45(right_hand_side, time, initial_conditions);
 
 figure(2)
